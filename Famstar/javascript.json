@@ -1,12 +1,14 @@
 {
+	// API Level Snippets
 	"Add service with validation check": {
 		"prefix": "addController",
 		"body": [
-			"$1:Controller name = async (req, res, next) => {",
+			"$1 = async (req, res, next) => {",
 				"const errors = validationResult(req);",
 				"if(errors.isEmpty()) {",
 					"try {",
-						"$2",
+						"// $2",
+						"$3",
 						"} catch(err) {",
 							"return next(err);",
 							"}",
