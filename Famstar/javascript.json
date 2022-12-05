@@ -1,0 +1,20 @@
+{
+	"Add service with validation check": {
+		"prefix": "addController",
+		"body": [
+			"$1:Controller name = async (req, res, next) => {",
+				"const errors = validationResult(req);",
+				"if(errors.isEmpty()) {",
+					"try {",
+						"$2",
+						"} catch(err) {",
+							"return next(err);",
+							"}",
+					"} else {",
+				"return res.status(400).json({error: true, message: errors.array()});",
+				"}",
+			"};"
+		],
+		"description": "Adds service handler with try/catch for controller."
+	}
+}
